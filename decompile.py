@@ -5,7 +5,6 @@ import re
 import typing
 import urllib.request
 
-
 outputPath = str(Path('./output/').resolve()) + '/'
 
 def safe_input(prompt: str, validResponses: typing.List[str]) -> str:
@@ -43,7 +42,6 @@ if useDefaultOutput[0] == 'y':
 	newOutputPath = input('Enter new Output Path: ')
 	outputPath = str(Path(newOutputPath).resolve()) + '/'
 	print(outputPath)
-
 
 inputUri = input('Enter URI: ')
 isFile = safe_input('Is this a file or a URL? [F/U]: ', ['file', 'url', 'f', 'u'])
