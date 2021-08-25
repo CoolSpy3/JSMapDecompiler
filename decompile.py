@@ -5,6 +5,7 @@ import re
 import typing
 import urllib.request
 
+
 outputPath = str(Path('./output/').resolve()) + '/'
 
 def safe_input(prompt: str, validResponses: typing.List[str]) -> str:
@@ -25,6 +26,24 @@ def formatFilePath(path: str) -> str:
     if path_old != path:
         print(f'Replacing: {path_old} with {path}')
     return str(outputPath + path)
+
+
+
+os.system("clear")
+print("       __ _____    __  ___                 ____                                        _  __")
+print("      / // ___/   /  |/  /____ _ ____     / __ \ ___   _____ ____   ____ ___   ____   (_)/ /___   _____")
+print(" __  / / \__ \   / /|_/ // __ `// __ \   / / / // _ \ / ___// __ \ / __ `__ \ / __ \ / // // _ \ / ___/")
+print("/ /_/ / ___/ /  / /  / // /_/ // /_/ /  / /_/ //  __// /__ / /_/ // / / / / // /_/ // // //  __// /")
+print("\____/ /____/  /_/  /_/ \__,_// .___/  /_____/ \___/ \___/ \____//_/ /_/ /_// .___//_//_/ \___//_/")
+print("                             /_/                                           /_/                    ")
+print("")
+
+useDefaultOutput = safe_input('Do you want to specify the output directory [Y/N]: ', ['yes', 'no', 'y', 'n'])
+if useDefaultOutput[0] == 'y':
+	newOutputPath = input('Enter new Output Path: ')
+	outputPath = str(Path(newOutputPath).resolve()) + '/'
+	print(outputPath)
+
 
 inputUri = input('Enter URI: ')
 isFile = safe_input('Is this a file or a URL? [F/U]: ', ['file', 'url', 'f', 'u'])
